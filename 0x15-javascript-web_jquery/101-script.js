@@ -1,11 +1,14 @@
-$('document').ready(function () {
-  $('DIV#add_item').click(function () {
-    $('UL.my_list').append('<li>Item</li>');
+$(function () {
+  $('#add_item').click(function () {
+    $('ul.my_list').append('<li>Item</li>');
   });
-  $('DIV#remove_item').click(function () {
-    $('UL.my_list li:last').remove();
+  $('#remove_item').click(function () {
+    let list = $('ul.my_list li');
+    if (list.length > 0) {
+      list[list.length - 1].remove();
+    }
   });
-  $('DIV#clear_list').click(function () {
-    $('UL.my_list').empty();
+  $('#clear_list').click(function () {
+    $('ul.my_list').empty();
   });
 });
